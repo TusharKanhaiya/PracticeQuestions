@@ -60,20 +60,6 @@ public class allHamiltonianPaths{
         boolean visi[] = new boolean[vrtx];
         int ct =0;
         getAllPaths(gr,0,vrtx-1,visi,""+0,ct);
-
-        // ArrayList<ArrayList<Integer>> lls = new ArrayList<>();
-        // for(int i=0;i<vrtx;i++)
-        // {
-        //     if(visi[i]==false)
-        //     {
-        //         ArrayList<Integer> ls = new ArrayList<>();
-        //         connected(gr,i,visi,ls);
-        //         lls.add(ls);
-        //     }
-        // }
-        // for(ArrayList<Integer> l : lls)
-        //     System.out.println(l);
-
     }
 
     private static void getAllPaths(ArrayList<Edge>[] gr, int src, int dest, boolean[] visi,String psf,int ct) {
@@ -94,20 +80,5 @@ public class allHamiltonianPaths{
         visi[src] = false;
 
     }
-
-    private static void connected(ArrayList<Edge>[] gr, int i, boolean[] visi, ArrayList<Integer> ls) {
-
-        visi[i] = true;
-        ls.add(i);
-        for(Edge e:gr[i])
-        {
-            if(visi[e.nbr]==false)
-            {   
-                connected(gr, e.nbr, visi, ls);
-            }
-        }
-
-    }
-
 
 }
